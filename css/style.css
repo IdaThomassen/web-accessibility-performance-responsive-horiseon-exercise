@@ -189,6 +189,13 @@ footer h2 {
   }
 
   .benefits {
-    width: 100%;
-  }
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .benefit-lead,
+    .benefit-brand,
+    .benefit-cost {
+        width: 100%;
+    }
 }
