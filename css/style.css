@@ -4,7 +4,6 @@
     margin: 0;
 }
 
-
 body {
     background-color: #ffffff;
 }
@@ -53,6 +52,11 @@ a {
     text-decoration: none;
 }
 
+a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
+
 p {
     font-size: 16px;
 }
@@ -83,7 +87,7 @@ main.content {
     flex-wrap: wrap;
     align-items: stretch;
     gap: 1.2rem;
-    margin-left: 20px;
+    padding: 0 20px;
 }
 
 .marketing {
@@ -91,19 +95,17 @@ main.content {
     flex-direction: column;
     gap: 1.2rem;
     flex: 1;
+    min-width: 0;
 }
 
 .services {
     flex: 1;
+    min-width: 0;
 }
 
 .benefits {
-    margin-right: 20px;
     padding: 20px;
-    clear: both;
-    float: right;
     width: 20%;
-    height: 100%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
 }
@@ -113,7 +115,6 @@ aside.benefits {
     flex-direction: column;
     align-items: center;
     gap: 1.4rem;
-    width: 20%;
 }
 
 .benefit-lead,
@@ -121,6 +122,7 @@ aside.benefits {
 .benefit-cost {
     margin-bottom: 32px;
     color: #ffffff;
+    width: 100%;
 }
 
 .benefit-lead h3,
@@ -135,7 +137,8 @@ aside.benefits {
 .benefit-cost img {
     display: block;
     margin: 10px auto;
-    max-width: 150px;
+    max-width: 100%;
+    height: auto;
 }
 
 .search-engine-optimization,
@@ -143,7 +146,7 @@ aside.benefits {
 .social-media-marketing {
     margin-bottom: 20px;
     padding: 50px;
-    height: 300px;
+    min-height: 300px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #0072bb;
     color: #ffffff;
@@ -152,7 +155,9 @@ aside.benefits {
 .search-engine-optimization img,
 .online-reputation-management img,
 .social-media-marketing img {
+    max-width: 100%;
     max-height: 200px;
+    height: auto;
 }
 
 .search-engine-optimization h2,
@@ -175,20 +180,32 @@ footer h2 {
 
 
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-  }
 
-  .header nav {
-    float: none;
-    margin-right: 0;
-  }
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
 
-  main.content {
-    flex-direction: column;
-  }
+    .header nav {
+        padding-top: 15px;
+        margin-right: 0;
+    }
 
-  .benefits {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main.content {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .marketing {
+        width: 100%;
+    }
+
+    .benefits {
         width: 100%;
         margin-right: 0;
     }
@@ -197,5 +214,31 @@ footer h2 {
     .benefit-brand,
     .benefit-cost {
         width: 100%;
+    }
+
+    .search-engine-optimization,
+    .online-reputation-management,
+    .social-media-marketing {
+        padding: 25px;
+        height: auto;
+        min-height: 300px;
+    }
+
+    .search-engine-optimization h2,
+    .online-reputation-management h2,
+    .social-media-marketing h2 {
+        font-size: 30px;
+    }
+
+    .float-left,
+    .float-right {
+        float: none;
+        margin: 0 auto 20px;
+        display: block;
+        max-width: 100%;
+    }
+
+    .hero {
+        height: 400px;
     }
 }
