@@ -75,9 +75,13 @@ p {
     margin-left: 25px;
 }
 
-.content {
+main.content {
     width: 75%;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 1.2rem;
     margin-left: 20px;
 }
 
